@@ -13,12 +13,21 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController {
 
+  // MARK: UI
+  
+  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var usernameTextField: UITextField!
+  @IBOutlet weak var passwordTextField: UITextField!
+  @IBOutlet weak var loginButton: UIButton!
+  @IBOutlet weak var joinButton: UIButton!
+  
+  
   // MARK: View Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.view.backgroundColor = .gray
+//    self.view.backgroundColor = .gray
     
     GIDSignIn.sharedInstance().uiDelegate = self
     GIDSignIn.sharedInstance().delegate = self
@@ -35,7 +44,7 @@ class LoginViewController: UIViewController {
   
   fileprivate func setupGoogleButton() {
     let googleButton = GIDSignInButton()
-    googleButton.frame = CGRect(x: 16, y: 116, width: view.frame.width - 32, height: 50)
+    googleButton.frame = CGRect(x: 50, y: self.joinButton.frame.origin.y + 32, width: view.frame.width - 100, height: 30)
     self.view.addSubview(googleButton)
   }
 }

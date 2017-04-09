@@ -8,18 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		794A25E99096A1DC1467F4ED /* Pods_PlaceMemory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BFC441D8F9F75EE47E1E5DA /* Pods_PlaceMemory.framework */; };
-		BD1F0DBB1E90CD630061408B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F0DBA1E90CD630061408B /* AppDelegate.swift */; };
-		BD1F0DBD1E90CD630061408B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F0DBC1E90CD630061408B /* LoginViewController.swift */; };
-		BD1F0DC01E90CD630061408B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1F0DBE1E90CD630061408B /* Main.storyboard */; };
-		BD1F0DC21E90CD630061408B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1F0DC11E90CD630061408B /* Assets.xcassets */; };
-		BD1F0DC51E90CD630061408B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1F0DC31E90CD630061408B /* LaunchScreen.storyboard */; };
-		BD1F0DCD1E90EEAC0061408B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD1F0DCC1E90EEAC0061408B /* GoogleService-Info.plist */; };
-		BD1F0DCF1E914EDF0061408B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F0DCE1E914EDF0061408B /* MainTabBarController.swift */; };
-		BD1F0DD31E926E170061408B /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F0DD21E926E170061408B /* PlaceListViewController.swift */; };
-		BD1F0DD51E927AB80061408B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F0DD41E927AB80061408B /* PostViewController.swift */; };
-		BD1F0DD71E9503F30061408B /* PostEditorImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F0DD61E9503F30061408B /* PostEditorImageCell.swift */; };
-		BD1F0DD91E9504070061408B /* PostEditorTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F0DD81E9504070061408B /* PostEditorTitleCell.swift */; };
-		BD1F0DDB1E9505AA0061408B /* PostEditorContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F0DDA1E9505AA0061408B /* PostEditorContentCell.swift */; };
+		BD71B8601E99E21A0046519A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD71B84C1E99E21A0046519A /* Assets.xcassets */; };
+		BD71B8611E99E21A0046519A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD71B84D1E99E21A0046519A /* LaunchScreen.storyboard */; };
+		BD71B8621E99E21A0046519A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD71B84F1E99E21A0046519A /* Main.storyboard */; };
+		BD71B8631E99E21A0046519A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8521E99E21A0046519A /* AppDelegate.swift */; };
+		BD71B8641E99E21A0046519A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8551E99E21A0046519A /* LoginViewController.swift */; };
+		BD71B8651E99E21A0046519A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8561E99E21A0046519A /* MainTabBarController.swift */; };
+		BD71B8661E99E21A0046519A /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8571E99E21A0046519A /* PlaceListViewController.swift */; };
+		BD71B8671E99E21A0046519A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8581E99E21A0046519A /* PostViewController.swift */; };
+		BD71B8681E99E21A0046519A /* PostEditorContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B85A1E99E21A0046519A /* PostEditorContentCell.swift */; };
+		BD71B8691E99E21A0046519A /* PostEditorImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B85B1E99E21A0046519A /* PostEditorImageCell.swift */; };
+		BD71B86A1E99E21A0046519A /* PostEditorTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B85C1E99E21A0046519A /* PostEditorTitleCell.swift */; };
+		BD71B86B1E99E21A0046519A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD71B85E1E99E21A0046519A /* GoogleService-Info.plist */; };
+		BD71B8721E99E3A30046519A /* background01.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD71B86D1E99E3A30046519A /* background01.jpeg */; };
+		BD71B8731E99E3A30046519A /* background02.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD71B86E1E99E3A30046519A /* background02.jpeg */; };
+		BD71B8741E99E3A30046519A /* background03.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD71B86F1E99E3A30046519A /* background03.jpeg */; };
+		BD71B8751E99E3A30046519A /* background04.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD71B8701E99E3A30046519A /* background04.jpeg */; };
+		BD71B8761E99E3A30046519A /* background05.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD71B8711E99E3A30046519A /* background05.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,19 +32,24 @@
 		8BFC441D8F9F75EE47E1E5DA /* Pods_PlaceMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaceMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E469944BCAC0F3EB86D58AD /* Pods-PlaceMemory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceMemory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlaceMemory/Pods-PlaceMemory.debug.xcconfig"; sourceTree = "<group>"; };
 		BD1F0DB71E90CD630061408B /* PlaceMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD1F0DBA1E90CD630061408B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD1F0DBC1E90CD630061408B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		BD1F0DBF1E90CD630061408B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BD1F0DC11E90CD630061408B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BD1F0DC41E90CD630061408B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BD1F0DC61E90CD630061408B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD1F0DCC1E90EEAC0061408B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BD1F0DCE1E914EDF0061408B /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		BD1F0DD21E926E170061408B /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
-		BD1F0DD41E927AB80061408B /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		BD1F0DD61E9503F30061408B /* PostEditorImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorImageCell.swift; sourceTree = "<group>"; };
-		BD1F0DD81E9504070061408B /* PostEditorTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorTitleCell.swift; sourceTree = "<group>"; };
-		BD1F0DDA1E9505AA0061408B /* PostEditorContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorContentCell.swift; sourceTree = "<group>"; };
+		BD71B84C1E99E21A0046519A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD71B84E1E99E21A0046519A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD71B8501E99E21A0046519A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BD71B8521E99E21A0046519A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BD71B8551E99E21A0046519A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BD71B8561E99E21A0046519A /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		BD71B8571E99E21A0046519A /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
+		BD71B8581E99E21A0046519A /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		BD71B85A1E99E21A0046519A /* PostEditorContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorContentCell.swift; sourceTree = "<group>"; };
+		BD71B85B1E99E21A0046519A /* PostEditorImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorImageCell.swift; sourceTree = "<group>"; };
+		BD71B85C1E99E21A0046519A /* PostEditorTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorTitleCell.swift; sourceTree = "<group>"; };
+		BD71B85E1E99E21A0046519A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BD71B85F1E99E21A0046519A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD71B86D1E99E3A30046519A /* background01.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background01.jpeg; sourceTree = "<group>"; };
+		BD71B86E1E99E3A30046519A /* background02.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background02.jpeg; sourceTree = "<group>"; };
+		BD71B86F1E99E3A30046519A /* background03.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background03.jpeg; sourceTree = "<group>"; };
+		BD71B8701E99E3A30046519A /* background04.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background04.jpeg; sourceTree = "<group>"; };
+		BD71B8711E99E3A30046519A /* background05.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background05.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +84,7 @@
 		BD1F0DAE1E90CD630061408B = {
 			isa = PBXGroup;
 			children = (
-				BD1F0DB91E90CD630061408B /* PlaceMemory */,
+				BD71B84A1E99E21A0046519A /* PlaceMemory */,
 				BD1F0DB81E90CD630061408B /* Products */,
 				1EF9413BFDEC0AB368A04C19 /* Pods */,
 				6F0B83761BF422C60383075A /* Frameworks */,
@@ -89,24 +99,77 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BD1F0DB91E90CD630061408B /* PlaceMemory */ = {
+		BD71B84A1E99E21A0046519A /* PlaceMemory */ = {
 			isa = PBXGroup;
 			children = (
-				BD1F0DBA1E90CD630061408B /* AppDelegate.swift */,
-				BD1F0DBC1E90CD630061408B /* LoginViewController.swift */,
-				BD1F0DBE1E90CD630061408B /* Main.storyboard */,
-				BD1F0DC11E90CD630061408B /* Assets.xcassets */,
-				BD1F0DC31E90CD630061408B /* LaunchScreen.storyboard */,
-				BD1F0DC61E90CD630061408B /* Info.plist */,
-				BD1F0DCC1E90EEAC0061408B /* GoogleService-Info.plist */,
-				BD1F0DCE1E914EDF0061408B /* MainTabBarController.swift */,
-				BD1F0DD21E926E170061408B /* PlaceListViewController.swift */,
-				BD1F0DD41E927AB80061408B /* PostViewController.swift */,
-				BD1F0DD61E9503F30061408B /* PostEditorImageCell.swift */,
-				BD1F0DD81E9504070061408B /* PostEditorTitleCell.swift */,
-				BD1F0DDA1E9505AA0061408B /* PostEditorContentCell.swift */,
+				BD71B8511E99E21A0046519A /* Sources */,
+				BD71B84B1E99E21A0046519A /* Resources */,
+				BD71B85D1E99E21A0046519A /* Supporting Files */,
 			);
 			path = PlaceMemory;
+			sourceTree = "<group>";
+		};
+		BD71B84B1E99E21A0046519A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD71B86D1E99E3A30046519A /* background01.jpeg */,
+				BD71B86E1E99E3A30046519A /* background02.jpeg */,
+				BD71B86F1E99E3A30046519A /* background03.jpeg */,
+				BD71B8701E99E3A30046519A /* background04.jpeg */,
+				BD71B8711E99E3A30046519A /* background05.jpeg */,
+				BD71B84F1E99E21A0046519A /* Main.storyboard */,
+				BD71B84D1E99E21A0046519A /* LaunchScreen.storyboard */,
+				BD71B84C1E99E21A0046519A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BD71B8511E99E21A0046519A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BD71B8521E99E21A0046519A /* AppDelegate.swift */,
+				BD71B8541E99E21A0046519A /* ViewControllers */,
+				BD71B8591E99E21A0046519A /* Views */,
+				BD71B8531E99E21A0046519A /* Models */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BD71B8531E99E21A0046519A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BD71B8541E99E21A0046519A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD71B8551E99E21A0046519A /* LoginViewController.swift */,
+				BD71B8561E99E21A0046519A /* MainTabBarController.swift */,
+				BD71B8571E99E21A0046519A /* PlaceListViewController.swift */,
+				BD71B8581E99E21A0046519A /* PostViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BD71B8591E99E21A0046519A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BD71B85A1E99E21A0046519A /* PostEditorContentCell.swift */,
+				BD71B85B1E99E21A0046519A /* PostEditorImageCell.swift */,
+				BD71B85C1E99E21A0046519A /* PostEditorTitleCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BD71B85D1E99E21A0046519A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD71B85E1E99E21A0046519A /* GoogleService-Info.plist */,
+				BD71B85F1E99E21A0046519A /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,10 +234,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD1F0DC51E90CD630061408B /* LaunchScreen.storyboard in Resources */,
-				BD1F0DCD1E90EEAC0061408B /* GoogleService-Info.plist in Resources */,
-				BD1F0DC21E90CD630061408B /* Assets.xcassets in Resources */,
-				BD1F0DC01E90CD630061408B /* Main.storyboard in Resources */,
+				BD71B8741E99E3A30046519A /* background03.jpeg in Resources */,
+				BD71B8751E99E3A30046519A /* background04.jpeg in Resources */,
+				BD71B8621E99E21A0046519A /* Main.storyboard in Resources */,
+				BD71B8731E99E3A30046519A /* background02.jpeg in Resources */,
+				BD71B86B1E99E21A0046519A /* GoogleService-Info.plist in Resources */,
+				BD71B8721E99E3A30046519A /* background01.jpeg in Resources */,
+				BD71B8601E99E21A0046519A /* Assets.xcassets in Resources */,
+				BD71B8761E99E3A30046519A /* background05.jpeg in Resources */,
+				BD71B8611E99E21A0046519A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,34 +301,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD1F0DD31E926E170061408B /* PlaceListViewController.swift in Sources */,
-				BD1F0DBD1E90CD630061408B /* LoginViewController.swift in Sources */,
-				BD1F0DBB1E90CD630061408B /* AppDelegate.swift in Sources */,
-				BD1F0DCF1E914EDF0061408B /* MainTabBarController.swift in Sources */,
-				BD1F0DD91E9504070061408B /* PostEditorTitleCell.swift in Sources */,
-				BD1F0DD71E9503F30061408B /* PostEditorImageCell.swift in Sources */,
-				BD1F0DDB1E9505AA0061408B /* PostEditorContentCell.swift in Sources */,
-				BD1F0DD51E927AB80061408B /* PostViewController.swift in Sources */,
+				BD71B8691E99E21A0046519A /* PostEditorImageCell.swift in Sources */,
+				BD71B8661E99E21A0046519A /* PlaceListViewController.swift in Sources */,
+				BD71B8641E99E21A0046519A /* LoginViewController.swift in Sources */,
+				BD71B86A1E99E21A0046519A /* PostEditorTitleCell.swift in Sources */,
+				BD71B8631E99E21A0046519A /* AppDelegate.swift in Sources */,
+				BD71B8651E99E21A0046519A /* MainTabBarController.swift in Sources */,
+				BD71B8681E99E21A0046519A /* PostEditorContentCell.swift in Sources */,
+				BD71B8671E99E21A0046519A /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BD1F0DBE1E90CD630061408B /* Main.storyboard */ = {
+		BD71B84D1E99E21A0046519A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BD1F0DBF1E90CD630061408B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BD1F0DC31E90CD630061408B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD1F0DC41E90CD630061408B /* Base */,
+				BD71B84E1E99E21A0046519A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BD71B84F1E99E21A0046519A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD71B8501E99E21A0046519A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -362,7 +430,7 @@
 			baseConfigurationReference = 8E469944BCAC0F3EB86D58AD /* Pods-PlaceMemory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PlaceMemory/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PlaceMemory/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aney00.PlaceMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -375,7 +443,7 @@
 			baseConfigurationReference = 0BCF668022703C64DFF63302 /* Pods-PlaceMemory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PlaceMemory/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PlaceMemory/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aney00.PlaceMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
