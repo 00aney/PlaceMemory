@@ -18,6 +18,10 @@ class PostViewController: UIViewController {
   var posts: [FIRDataSnapshot]! = []
   var _refHandle: FIRDatabaseHandle!
   
+  var postImage: UIImage?
+  var placeName: String?
+  var content: String?
+  
   
   // MARK: UI
   
@@ -35,6 +39,18 @@ class PostViewController: UIViewController {
 //    self.tableView.register(PostEditorImageCell.self, forCellReuseIdentifier: "PostEditorImageCell")
 //    self.tableView.register(PostEditorTitleCell.self, forCellReuseIdentifier: "PostEditorTitleCell")
 //    self.tableView.register(PostEditorContentCell.self, forCellReuseIdentifier: "PostEditorContentCell")
+    
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+      barButtonSystemItem: .cancel,
+      target: self,
+      action: #selector(cancelButtonDidTap)
+    )
+    
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+      barButtonSystemItem: .done,
+      target: self,
+      action: #selector(doneButtonDidTap)
+    )
     
     self.configureDatabase()
 //    self.buttonDidTap()
@@ -69,6 +85,18 @@ class PostViewController: UIViewController {
     
   }
   
+  func cancelButtonDidTap() {
+    print("cancelButtonDidTap")
+    self.postImage = nil
+    self.placeName = ""
+    self.content = ""
+    self.tableView.reloadData()
+  }
+  
+  func doneButtonDidTap() {
+    print("doneButtonDidTap")
+  }
+  
   /*
    // MARK: - Navigation
    
@@ -78,6 +106,12 @@ class PostViewController: UIViewController {
    // Pass the selected object to the new view controller.
    }
    */
+  
+  func presentImagePickerController() {
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.delegate = self
+    self.present(imagePickerController, animated: true, completion: nil)
+  }
 
 }
 
@@ -94,14 +128,17 @@ extension PostViewController: UITableViewDataSource {
     switch indexPath.row {
     case 0:
       let cell = tableView.dequeueReusableCell(withIdentifier: "postEditorImageCell", for: indexPath) as! PostEditorImageCell
+      cell.configure(image: self.postImage)
       return cell
       
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: "postEditorTitleCell", for: indexPath) as! PostEditorTitleCell
+      cell.configure(placeName: self.placeName)
       return cell
       
     case 2:
       let cell = tableView.dequeueReusableCell(withIdentifier: "postEditorContentCell", for: indexPath) as! PostEditorContentCell
+      cell.configure(content: self.content)
       return cell
       
     default:
@@ -131,5 +168,39 @@ extension PostViewController: UITableViewDelegate {
       return 0
     }
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.row {
+    case 0:
+      self.presentImagePickerController()
+      
+    default:
+      return
+    }
+  }
+  
+}
+
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension PostViewController: UIImagePickerControllerDelegate {
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+    
+    // TODO: 1번째 셀 UIImage 지정
+    self.postImage = selectedImage
+    self.tableView.reloadData()
+    
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+}
+
+
+// MARK: - UINavigationControllerDelegate
+
+extension PostViewController: UINavigationControllerDelegate {
   
 }

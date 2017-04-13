@@ -26,6 +26,14 @@ class PostEditorContentCell: UITableViewCell {
   }
   
   
+  // MARK: Configuring
+  
+  func configure(content: String?) {
+    guard let content = content else { return }
+    self.contentTextView.text = content
+  }
+  
+  
   // MARK: Size
   
   class func height() -> CGFloat {

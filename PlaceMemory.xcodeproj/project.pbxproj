@@ -25,6 +25,8 @@
 		BD71B8741E99E3A30046519A /* background03.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD71B86F1E99E3A30046519A /* background03.jpeg */; };
 		BD71B8751E99E3A30046519A /* background04.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD71B8701E99E3A30046519A /* background04.jpeg */; };
 		BD71B8761E99E3A30046519A /* background05.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BD71B8711E99E3A30046519A /* background05.jpeg */; };
+		BD71B8781E9FD7890046519A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8771E9FD7890046519A /* Post.swift */; };
+		BD71B87A1E9FD7F70046519A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8791E9FD7F70046519A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		BD71B86F1E99E3A30046519A /* background03.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background03.jpeg; sourceTree = "<group>"; };
 		BD71B8701E99E3A30046519A /* background04.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background04.jpeg; sourceTree = "<group>"; };
 		BD71B8711E99E3A30046519A /* background05.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background05.jpeg; sourceTree = "<group>"; };
+		BD71B8771E9FD7890046519A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		BD71B8791E9FD7F70046519A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				BD71B8521E99E21A0046519A /* AppDelegate.swift */,
-				BD71B8541E99E21A0046519A /* ViewControllers */,
-				BD71B8591E99E21A0046519A /* Views */,
 				BD71B8531E99E21A0046519A /* Models */,
+				BD71B8591E99E21A0046519A /* Views */,
+				BD71B8541E99E21A0046519A /* ViewControllers */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -138,6 +142,8 @@
 		BD71B8531E99E21A0046519A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BD71B8771E9FD7890046519A /* Post.swift */,
+				BD71B8791E9FD7F70046519A /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -307,7 +313,9 @@
 				BD71B86A1E99E21A0046519A /* PostEditorTitleCell.swift in Sources */,
 				BD71B8631E99E21A0046519A /* AppDelegate.swift in Sources */,
 				BD71B8651E99E21A0046519A /* MainTabBarController.swift in Sources */,
+				BD71B8781E9FD7890046519A /* Post.swift in Sources */,
 				BD71B8681E99E21A0046519A /* PostEditorContentCell.swift in Sources */,
+				BD71B87A1E9FD7F70046519A /* User.swift in Sources */,
 				BD71B8671E99E21A0046519A /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

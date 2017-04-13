@@ -22,11 +22,25 @@ class PostEditorImageCell: UITableViewCell {
     return width // 정사각형
   }
   
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
   
   // MARK: Configuring
   
-  func configure() {
-    
+  func configure(image: UIImage?) {
+    guard let image = image else {
+      self.postImageView.image = nil
+      self.postImageView.backgroundColor = .clear
+      self.postImageView.isOpaque = false
+      return
+    }
+    self.postImageView.image = image
+    self.addButton.isHidden = true
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,7 +54,6 @@ class PostEditorImageCell: UITableViewCell {
   
   @IBAction func addButtonDidTap(_ sender: Any) {
     // TODO: 카메라 라이브러리
-    print("addButtonDidTap")
   }
   
   

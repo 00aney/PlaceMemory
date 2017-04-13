@@ -25,6 +25,12 @@ class PostEditorTitleCell: UITableViewCell {
     // Configure the view for the selected state
   }
   
+  // MARK: Configuring
+  
+  func configure(placeName: String?) {
+    guard let placeName = placeName else { return }
+    self.titleTextField.text = placeName
+  }
   
   // MARK: Size
   class func height() -> CGFloat {
