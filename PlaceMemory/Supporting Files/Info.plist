@@ -37,6 +37,8 @@
 	<string>Main</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>기록할 장소의 사진을 올려보세요.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>기록할 장소의 위치(좌표)를 확인합니다.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

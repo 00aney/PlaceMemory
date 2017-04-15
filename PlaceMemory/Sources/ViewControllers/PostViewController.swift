@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreLocation
 
 import Firebase
 
 class PostViewController: UIViewController {
 
   // MARK: properties
+  
+  var locationManager: CLLocationManager = CLLocationManager()
+  var location: CLLocation!
   
   var ref: FIRDatabaseReference!
   var posts: [FIRDataSnapshot]! = []
@@ -21,6 +25,7 @@ class PostViewController: UIViewController {
   var postImage: UIImage?
   var placeName: String?
   var content: String?
+  var coords: CLLocationCoordinate2D?
   
   
   // MARK: UI
@@ -32,6 +37,11 @@ class PostViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.locationManager.delegate = self
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    self.locationManager.requestAlwaysAuthorization()
+    self.locationManager.startUpdatingLocation()
     
     self.tableView.dataSource = self
     self.tableView.delegate = self
@@ -54,6 +64,13 @@ class PostViewController: UIViewController {
     
     self.configureDatabase()
 //    self.buttonDidTap()
+    
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(keyboardWillChangeFrame),
+      name: .UIKeyboardWillChangeFrame,
+      object: nil
+    )
   }
   
   override func didReceiveMemoryWarning() {
@@ -73,15 +90,19 @@ class PostViewController: UIViewController {
 //    })
   }
   
+  
+  // MARK: Actions
+  
   func buttonDidTap() {
-    var mdata = [String: Any]()
-    mdata["title"] = "test"
-    mdata["username"] = "yenafirst91"
-    mdata["content"] = "test"
-    mdata["coords"] = ["latitude": 12, "longtitude": 13]
-    mdata["timestamp"] = "\(Date(timeIntervalSince1970: Date().timeIntervalSince1970))"
-    
-    self.ref.child("posts").childByAutoId().setValue(mdata)
+   
+//    var mdata = [String: Any]()
+//    mdata["title"] = "test"
+//    mdata["username"] = "yenafirst91"
+//    mdata["content"] = "test"
+//    mdata["coords"] = ["latitude": 12, "longtitude": 13]
+//    mdata["timestamp"] = "\(Date(timeIntervalSince1970: Date().timeIntervalSince1970))"
+//    
+//    self.ref.child("posts").childByAutoId().setValue(mdata)
     
   }
   
@@ -91,10 +112,21 @@ class PostViewController: UIViewController {
     self.placeName = ""
     self.content = ""
     self.tableView.reloadData()
+    self.view.setNeedsDisplay()
   }
   
   func doneButtonDidTap() {
     print("doneButtonDidTap")
+    PostService.create(placeName: "test", content: "test", coords: self.coords!) { response in
+      switch response {
+      case .success:
+        print("success")
+        
+      case .failure(let error):
+        print(error)
+        
+      }
+    }
   }
   
   /*
@@ -111,6 +143,27 @@ class PostViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
     imagePickerController.delegate = self
     self.present(imagePickerController, animated: true, completion: nil)
+  }
+  
+  
+  // MARK: Notifications
+  
+  func keyboardWillChangeFrame(notification: Notification) {
+    guard let keyboardFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+      let duration =  notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval
+      else { return }
+    
+    let keyboardVisibleHeight = UIScreen.main.bounds.height - keyboardFrame.origin.y
+    
+    UIView.animate(withDuration: duration) {
+      self.tableView.contentInset.bottom = keyboardVisibleHeight
+      self.tableView.scrollIndicatorInsets.bottom = keyboardVisibleHeight
+      
+      if keyboardVisibleHeight > 0 {
+        let indexPath = IndexPath(row: 2, section: 0)
+        self.tableView.scrollToRow(at: indexPath, at: .none, animated: false)
+      }
+    }
   }
 
 }
@@ -202,5 +255,17 @@ extension PostViewController: UIImagePickerControllerDelegate {
 // MARK: - UINavigationControllerDelegate
 
 extension PostViewController: UINavigationControllerDelegate {
+  
+}
+
+
+// MARK: - CLLocationManagerDelegate
+
+extension PostViewController: CLLocationManagerDelegate {
+  
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    let userLocation: CLLocation = locations[0]
+    self.coords = userLocation.coordinate
+  }
   
 }
