@@ -17,6 +17,7 @@ class MainTabBarController: UITabBarController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.delegate = self
     // Do any additional setup after loading the view.
   }
 
@@ -36,4 +37,28 @@ class MainTabBarController: UITabBarController {
   }
   */
 
+  func presentPostViewController() {
+    guard let postViewController = self.storyboard?.instantiateViewController(withIdentifier: "PostViewControllerID") else { return }
+    
+    self.present(UINavigationController(rootViewController: postViewController), animated: true, completion: nil)
+  }
+  
+}
+
+extension MainTabBarController: UITabBarControllerDelegate {
+  
+  func tabBarController(
+    _ tabBarController: UITabBarController,
+    shouldSelect viewController: UIViewController
+    ) -> Bool {
+    if let fakeViewController = tabBarController.viewControllers?[2] as? FakeViewController {
+      if viewController === fakeViewController {
+        self.presentPostViewController()
+        return false
+      }
+    }
+    
+    return true
+  }
+  
 }

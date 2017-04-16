@@ -108,11 +108,8 @@ class PostViewController: UIViewController {
   
   func cancelButtonDidTap() {
     print("cancelButtonDidTap")
-    self.postImage = nil
-    self.placeName = ""
-    self.content = ""
-    self.tableView.reloadData()
-    self.view.setNeedsDisplay()
+    
+    self.dismiss(animated: true, completion: nil)
   }
   
   func doneButtonDidTap() {
@@ -121,6 +118,7 @@ class PostViewController: UIViewController {
       switch response {
       case .success:
         print("success")
+        self.dismiss(animated: true, completion: nil)
         
       case .failure(let error):
         print(error)

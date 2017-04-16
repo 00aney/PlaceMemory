@@ -28,6 +28,7 @@
 		BD71B8781E9FD7890046519A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8771E9FD7890046519A /* Post.swift */; };
 		BD71B87A1E9FD7F70046519A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8791E9FD7F70046519A /* User.swift */; };
 		BD71B87D1EA1FD810046519A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B87C1EA1FD810046519A /* PostService.swift */; };
+		BD71B87F1EA3594A0046519A /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B87E1EA3594A0046519A /* FakeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		BD71B8771E9FD7890046519A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BD71B8791E9FD7F70046519A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BD71B87C1EA1FD810046519A /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		BD71B87E1EA3594A0046519A /* FakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				BD71B8561E99E21A0046519A /* MainTabBarController.swift */,
 				BD71B8571E99E21A0046519A /* PlaceListViewController.swift */,
 				BD71B8581E99E21A0046519A /* PostViewController.swift */,
+				BD71B87E1EA3594A0046519A /* FakeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				BD71B8651E99E21A0046519A /* MainTabBarController.swift in Sources */,
 				BD71B8781E9FD7890046519A /* Post.swift in Sources */,
 				BD71B8681E99E21A0046519A /* PostEditorContentCell.swift in Sources */,
+				BD71B87F1EA3594A0046519A /* FakeViewController.swift in Sources */,
 				BD71B87A1E9FD7F70046519A /* User.swift in Sources */,
 				BD71B8671E99E21A0046519A /* PostViewController.swift in Sources */,
 			);
