@@ -29,6 +29,7 @@ class PostEditorContentCell: UITableViewCell {
   // MARK: Configuring
   
   func configure(content: String?) {
+    self.contentTextView.delegate = self
     guard let content = content else { return }
     self.contentTextView.text = content
   }
@@ -52,6 +53,18 @@ class PostEditorContentCell: UITableViewCell {
       height: self.contentView.bounds.height - 8
     )
     self.contentTextView.center = self.contentView.center
+  }
+  
+}
+
+
+// MARK: - UITextFieldDelegate
+
+extension PostEditorContentCell: UITextViewDelegate {
+  
+  func textViewDidChange(_ textView: UITextView) {
+    guard let content = self.contentTextView.text else { return }
+    NotificationCenter.default.post(name: .UITextViewTextDidChange, object: self, userInfo: ["content": content])
   }
   
 }

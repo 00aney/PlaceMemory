@@ -9,18 +9,12 @@
 import UIKit
 import CoreLocation
 
-import Firebase
-
 class PostViewController: UIViewController {
 
   // MARK: properties
   
   var locationManager: CLLocationManager = CLLocationManager()
   var location: CLLocation!
-  
-  var ref: FIRDatabaseReference!
-  var posts: [FIRDataSnapshot]! = []
-  var _refHandle: FIRDatabaseHandle!
   
   var postImage: UIImage?
   var placeName: String?
@@ -46,10 +40,6 @@ class PostViewController: UIViewController {
     self.tableView.dataSource = self
     self.tableView.delegate = self
     
-//    self.tableView.register(PostEditorImageCell.self, forCellReuseIdentifier: "PostEditorImageCell")
-//    self.tableView.register(PostEditorTitleCell.self, forCellReuseIdentifier: "PostEditorTitleCell")
-//    self.tableView.register(PostEditorContentCell.self, forCellReuseIdentifier: "PostEditorContentCell")
-    
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(
       barButtonSystemItem: .cancel,
       target: self,
@@ -62,59 +52,52 @@ class PostViewController: UIViewController {
       action: #selector(doneButtonDidTap)
     )
     
-    self.configureDatabase()
-//    self.buttonDidTap()
-    
     NotificationCenter.default.addObserver(
       self,
       selector: #selector(keyboardWillChangeFrame),
       name: .UIKeyboardWillChangeFrame,
       object: nil
     )
+    
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(textFieldTextDidChange),
+      name: .UITextFieldTextDidChange,
+      object: nil
+    )
+    
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(textViewTextDidChange),
+      name: .UITextViewTextDidChange,
+      object: nil
+    )
   }
   
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
   
   
-  // MARK: Firebase
-  
-  func configureDatabase() {
-    ref = FIRDatabase.database().reference()
-    //     Listen for new messages in the Firebase database
-//    _refHandle = self.ref.child("posts").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
-//      guard let `self` = self else { return }
-//      self.posts.append(snapshot)
-//    })
-  }
-  
-  
   // MARK: Actions
   
-  func buttonDidTap() {
-   
-//    var mdata = [String: Any]()
-//    mdata["title"] = "test"
-//    mdata["username"] = "yenafirst91"
-//    mdata["content"] = "test"
-//    mdata["coords"] = ["latitude": 12, "longtitude": 13]
-//    mdata["timestamp"] = "\(Date(timeIntervalSince1970: Date().timeIntervalSince1970))"
-//    
-//    self.ref.child("posts").childByAutoId().setValue(mdata)
-    
-  }
-  
   func cancelButtonDidTap() {
-    print("cancelButtonDidTap")
-    
     self.dismiss(animated: true, completion: nil)
   }
   
   func doneButtonDidTap() {
-    print("doneButtonDidTap")
-    PostService.create(placeName: "test", content: "test", coords: self.coords!) { response in
+    guard let placeName = self.placeName,
+      let content = self.content,
+      let coords = self.coords else { return }
+    
+    PostService.create(placeName: placeName,
+                       content: content,
+                       coords: coords) { response in
       switch response {
       case .success:
         print("success")
@@ -125,22 +108,6 @@ class PostViewController: UIViewController {
         
       }
     }
-  }
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
-  func presentImagePickerController() {
-    let imagePickerController = UIImagePickerController()
-    imagePickerController.delegate = self
-    self.present(imagePickerController, animated: true, completion: nil)
   }
   
   
@@ -163,7 +130,26 @@ class PostViewController: UIViewController {
       }
     }
   }
+  
+  func textFieldTextDidChange(notification: Notification) {
+    guard let placeName = notification.userInfo?["placeName"] as? String else { return }
+    self.placeName = placeName
+  }
 
+  func textViewTextDidChange(notification: Notification) {
+    guard let content = notification.userInfo?["content"] as? String else { return }
+    self.content = content
+  }
+  
+  
+  // MARK: Presenting View Controllers
+  
+  func presentImagePickerController() {
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.delegate = self
+    self.present(imagePickerController, animated: true, completion: nil)
+  }
+  
 }
 
 

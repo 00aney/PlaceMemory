@@ -25,9 +25,12 @@ class PostEditorTitleCell: UITableViewCell {
     // Configure the view for the selected state
   }
   
+  
   // MARK: Configuring
   
   func configure(placeName: String?) {
+    self.titleTextField.delegate = self
+    print("!!!!")
     guard let placeName = placeName else { return }
     self.titleTextField.text = placeName
   }
@@ -50,5 +53,24 @@ class PostEditorTitleCell: UITableViewCell {
     )
     self.titleTextField.center = self.contentView.center
   }
+
+}
+
+
+// MARK: - UITextFieldDelegate
+
+extension PostEditorTitleCell: UITextFieldDelegate {
+
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    guard let placeName = self.titleTextField.text else { return }
+    
+    NotificationCenter.default.post(name: .UITextFieldTextDidChange, object: self, userInfo: ["placeName": placeName])
+  }
   
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    guard let placeName = self.titleTextField.text else { return true }
+    
+    NotificationCenter.default.post(name: .UITextFieldTextDidChange, object: self, userInfo: ["placeName": placeName])
+    return true
+  }
 }

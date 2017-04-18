@@ -27,7 +27,7 @@ struct PostService {
   ) {
     let ref: FIRDatabaseReference = FIRDatabase.database().reference()
     
-    let username = "test"
+    let username = "yenafirst91@gmail.com"
     let timestamp = "\(Date(timeIntervalSince1970: Date().timeIntervalSince1970))"
     let content = content
     let coords: [String: Double] = ["latitude": coords.latitude, "longitude": coords.longitude]

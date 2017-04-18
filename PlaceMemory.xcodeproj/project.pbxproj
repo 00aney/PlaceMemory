@@ -29,6 +29,7 @@
 		BD71B87A1E9FD7F70046519A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B8791E9FD7F70046519A /* User.swift */; };
 		BD71B87D1EA1FD810046519A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B87C1EA1FD810046519A /* PostService.swift */; };
 		BD71B87F1EA3594A0046519A /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B87E1EA3594A0046519A /* FakeViewController.swift */; };
+		BD9ADED01EA3753200C8F8C1 /* PostCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ADECF1EA3753200C8F8C1 /* PostCardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		BD71B8791E9FD7F70046519A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BD71B87C1EA1FD810046519A /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		BD71B87E1EA3594A0046519A /* FakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
+		BD9ADECF1EA3753200C8F8C1 /* PostCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				BD71B85A1E99E21A0046519A /* PostEditorContentCell.swift */,
 				BD71B85B1E99E21A0046519A /* PostEditorImageCell.swift */,
 				BD71B85C1E99E21A0046519A /* PostEditorTitleCell.swift */,
+				BD9ADECF1EA3753200C8F8C1 /* PostCardCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			files = (
 				BD71B8691E99E21A0046519A /* PostEditorImageCell.swift in Sources */,
 				BD71B8661E99E21A0046519A /* PlaceListViewController.swift in Sources */,
+				BD9ADED01EA3753200C8F8C1 /* PostCardCell.swift in Sources */,
 				BD71B8641E99E21A0046519A /* LoginViewController.swift in Sources */,
 				BD71B86A1E99E21A0046519A /* PostEditorTitleCell.swift in Sources */,
 				BD71B8631E99E21A0046519A /* AppDelegate.swift in Sources */,

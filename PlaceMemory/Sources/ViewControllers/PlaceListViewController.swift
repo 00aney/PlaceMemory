@@ -15,8 +15,10 @@ class PlaceListViewController: UIViewController {
   // MARK: properties
   
   var ref: FIRDatabaseReference!
-  var messages: [FIRDataSnapshot]! = []
-  var _refHandle: FIRDatabaseHandle!
+//  var messages: [FIRDataSnapshot]! = []
+  var refHandle: FIRDatabaseHandle!
+  
+  var posts: [Post] = []
   
   
   // MARK: UI
@@ -38,7 +40,11 @@ class PlaceListViewController: UIViewController {
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
     
-    self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+//    self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+//    self.collectionView.register(PostCardCell.self, forCellWithReuseIdentifier: "postCardCellId")
+    
+    // TODO: Load Post List
+    self.configureDatabase()
     
   }
   
@@ -57,6 +63,59 @@ class PlaceListViewController: UIViewController {
    // Pass the selected object to the new view controller.
    }
    */
+  
+  // MARK: Firebase
+  
+  func configureDatabase() {
+    ref = FIRDatabase.database().reference()
+    
+    guard let userID = FIRAuth.auth()?.currentUser?.email else { return }
+    print(userID)
+    
+    ref.child("posts").queryOrdered(byChild: "username")
+      .queryEqual(toValue: userID)
+      .observe(.value, with: { [weak self] snapshot in
+        guard let `self` = self else { return }
+        print(snapshot.value)
+        
+//        guard let message = messageSnapshot.value as? [String:String] else { return }
+      })
+      
+    
+      
+      
+//      
+//      .observeSingleEvent(of: .value, with: { snapshot in
+//        print(snapshot.value)
+//      })
+    
+    
+//    (of: .value, with: { snapshot in
+//        print(snapshot)
+//      })
+    
+//    ref.child("users").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+//      // Get user value
+//      let username = snapshot.value!["username"] as! String
+//      let user = User.init(username: username)
+//      
+//      // ...
+//    }) { (error) in
+//      print(error.localizedDescription)
+//    }
+    
+    //.child(getUid())).queryOrderedByChild("starCount"
+    
+//    ref.child("posts").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+//      // Get user value
+//      let username = snapshot.value!["username"] as! String
+//      let user = User.init(username: username)
+//      
+//      // ...
+//    }) { (error) in
+//      print(error.localizedDescription)
+//    }
+  }
 
 }
 
@@ -70,10 +129,10 @@ extension PlaceListViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCardCellId", for: indexPath) as! PostCardCell
     
-    cell.backgroundColor = .blue
-    
+//    cell.configure(post: self.posts[indexPath.item])
+
     return cell
   }
   
@@ -84,8 +143,8 @@ extension PlaceListViewController: UICollectionViewDataSource {
 
 extension PlaceListViewController: UICollectionViewDelegateFlowLayout {
   
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: self.view.frame.size.width, height: 300)
-  }
+//  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//    return CGSize(width: self.view.frame.size.width, height: 300)
+//  }
   
 }
