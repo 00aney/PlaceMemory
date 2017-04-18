@@ -55,6 +55,18 @@ struct Post {
     ref = snapshot.ref
   }
   
+  init(dictionary: [String: Any]) {
+    key = ""
+    imageURL = dictionary["imageURL"] as? String
+    placeName = dictionary["placeName"] as! String
+    content = dictionary["content"] as? String
+    username = dictionary["username"] as! String
+    coords = dictionary["coords"] as! [String: Double]
+    timestamp = dictionary["timestamp"] as! String
+    completed = dictionary["completed"] as! Bool
+    ref = nil
+  }
+  
   func toAnyObject() -> Any {
     return [
       "imageURL": imageURL ?? "",

@@ -76,15 +76,23 @@ class PlaceListViewController: UIViewController {
       .queryEqual(toValue: userID)
       .observe(.value, with: { [weak self] snapshot in
         guard let `self` = self else { return }
-        print(snapshot.value)
         
-//        guard let message = messageSnapshot.value as? [String:String] else { return }
+        if let snapshots = snapshot.value as? [String: Any] {
+          for snap in snapshots {
+            print(snap.key)
+            print(snap.value)
+            print("!")
+            if let postDict = snap.value as? [String: Any] {
+              print(postDict)
+            }
+          }
+        }
       })
-      
-    
-      
-      
-//      
+  }
+  
+  
+  
+//
 //      .observeSingleEvent(of: .value, with: { snapshot in
 //        print(snapshot.value)
 //      })
@@ -115,7 +123,7 @@ class PlaceListViewController: UIViewController {
 //    }) { (error) in
 //      print(error.localizedDescription)
 //    }
-  }
+//  }
 
 }
 
