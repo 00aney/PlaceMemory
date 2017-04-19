@@ -62,7 +62,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place Memory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pG-eq-2Ae">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장소 기억" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pG-eq-2Ae">
                                 <rect key="frame" x="0.0" y="50" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -142,7 +142,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="postCardCellId" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9d9-Zy-b0o">
-                                            <rect key="frame" x="8" y="35" width="359" height="100"/>
+                                            <rect key="frame" x="8" y="35" width="359" height="85"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -168,32 +168,76 @@
             </objects>
             <point key="canvasLocation" x="2464.8000000000002" y="280.20989505247377"/>
         </scene>
-        <!--View Controller-->
+        <!--Places I visited-->
         <scene sceneID="pVc-7w-M2X">
             <objects>
-                <viewController id="AGp-Jf-zkE" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="t7t-O6-bg2"/>
-                        <viewControllerLayoutGuide type="bottom" id="kCZ-ic-aqt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pLY-z0-dek">
+                <viewController title="Places I visited" id="AGp-Jf-zkE" customClass="NearPlaceListViewController" customModule="PlaceMemory" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="OLG-Xe-BZH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6RP-e0-1dE">
+                            <size key="itemSize" width="375" height="120"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCardCellId" id="1q5-C7-Qnw" customClass="PostCardCell" customModule="PlaceMemory" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqC-rC-qwV">
+                                            <rect key="frame" x="8" y="8" width="140" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ3-V4-pkS">
+                                            <rect key="frame" x="200" y="8" width="140" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="postCardCellId" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akJ-Pr-pK1">
+                                            <rect key="frame" x="8" y="35" width="359" height="85"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="contentLabel" destination="akJ-Pr-pK1" id="cWc-dJ-PIy"/>
+                                    <outlet property="locationLabel" destination="jZ3-V4-pkS" id="9sG-YY-naA"/>
+                                    <outlet property="titleLabel" destination="AqC-rC-qwV" id="qVB-qf-qc4"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                    </collectionView>
                     <navigationItem key="navigationItem" id="5Rg-FJ-u5d"/>
+                    <connections>
+                        <outlet property="collectionView" destination="OLG-Xe-BZH" id="RL4-P6-dKa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9u1-fe-qwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2642" y="970"/>
+            <point key="canvasLocation" x="2640.8000000000002" y="969.26536731634189"/>
         </scene>
-        <!--Item-->
+        <!--All-->
         <scene sceneID="0bQ-Ha-YiD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rpu-yQ-GQA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ric-mQ-VwY"/>
+                    <tabBarItem key="tabBarItem" title="All" id="Ric-mQ-VwY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dgQ-aN-fry">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dgQ-aN-fry">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -206,13 +250,13 @@
             </objects>
             <point key="canvasLocation" x="1710" y="280"/>
         </scene>
-        <!--Item-->
+        <!--Near-->
         <scene sceneID="mGh-NR-D0Q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="31i-Zb-ECE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="N4y-U9-Mg8"/>
+                    <tabBarItem key="tabBarItem" title="Near" id="N4y-U9-Mg8"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tLH-pU-9D0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tLH-pU-9D0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -234,7 +278,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="postEditorImageCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="postEditorImageCell" rowHeight="308" id="znw-d9-f7s" customClass="PostEditorImageCell" customModule="PlaceMemory" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="postEditorImageCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="postEditorImageCell" rowHeight="308" id="znw-d9-f7s" customClass="PostEditorImageCell" customModule="PlaceMemory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="56" width="375" height="308"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="znw-d9-f7s" id="bAo-WS-xk1">
@@ -259,7 +303,7 @@
                                     <outlet property="postImageView" destination="IA4-PE-8K0" id="zq1-aG-6gq"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="postEditorTitleCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="postEditorTitleCell" rowHeight="40" id="oEH-KQ-saG" customClass="PostEditorTitleCell" customModule="PlaceMemory" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="postEditorTitleCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="postEditorTitleCell" rowHeight="40" id="oEH-KQ-saG" customClass="PostEditorTitleCell" customModule="PlaceMemory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="364" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oEH-KQ-saG" id="CS4-Mp-jWU">
@@ -280,7 +324,7 @@
                                     <outlet property="titleTextField" destination="6Ur-pt-PjD" id="fIW-3t-rMb"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="postEditorContentCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="postEditorContentCell" rowHeight="64" id="cxL-pS-XIe" customClass="PostEditorContentCell" customModule="PlaceMemory" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="postEditorContentCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="postEditorContentCell" rowHeight="64" id="cxL-pS-XIe" customClass="PostEditorContentCell" customModule="PlaceMemory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="404" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxL-pS-XIe" id="fTX-Lc-2pQ">

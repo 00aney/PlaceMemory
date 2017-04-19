@@ -56,7 +56,7 @@ struct Post {
   }
   
   init(dictionary: [String: Any]) {
-    key = ""
+    key = dictionary["key"] as? String ?? ""
     imageURL = dictionary["imageURL"] as? String
     placeName = dictionary["placeName"] as! String
     content = dictionary["content"] as? String

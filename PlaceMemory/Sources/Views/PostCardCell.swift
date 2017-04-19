@@ -16,12 +16,20 @@ class PostCardCell: UICollectionViewCell {
   @IBOutlet weak var locationLabel: UILabel!
   @IBOutlet weak var contentLabel: UILabel!
   
-//  
 //  class func size() -> CGSize {
 //    
 //  }
   
+  
+  // MARK: Configuring
+  
   func configure(post: Post) {
+    self.titleLabel.text = post.placeName
+    self.contentLabel.text = post.content
+    if let latitude = post.coords["latitude"],
+      let longitude = post.coords["longitude"] {
+      self.locationLabel.text = "\(round(latitude)), \(round(longitude))"
+    }
     
   }
 }

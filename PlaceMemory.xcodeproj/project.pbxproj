@@ -30,6 +30,7 @@
 		BD71B87D1EA1FD810046519A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B87C1EA1FD810046519A /* PostService.swift */; };
 		BD71B87F1EA3594A0046519A /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD71B87E1EA3594A0046519A /* FakeViewController.swift */; };
 		BD9ADED01EA3753200C8F8C1 /* PostCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ADECF1EA3753200C8F8C1 /* PostCardCell.swift */; };
+		BD9ADED41EA7A50C00C8F8C1 /* NearPlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9ADED31EA7A50C00C8F8C1 /* NearPlaceListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		BD71B87C1EA1FD810046519A /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		BD71B87E1EA3594A0046519A /* FakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
 		BD9ADECF1EA3753200C8F8C1 /* PostCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCardCell.swift; sourceTree = "<group>"; };
+		BD9ADED31EA7A50C00C8F8C1 /* NearPlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearPlaceListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				BD71B8551E99E21A0046519A /* LoginViewController.swift */,
 				BD71B8561E99E21A0046519A /* MainTabBarController.swift */,
 				BD71B8571E99E21A0046519A /* PlaceListViewController.swift */,
+				BD9ADED31EA7A50C00C8F8C1 /* NearPlaceListViewController.swift */,
 				BD71B8581E99E21A0046519A /* PostViewController.swift */,
 				BD71B87E1EA3594A0046519A /* FakeViewController.swift */,
 			);
@@ -335,6 +338,7 @@
 				BD71B8651E99E21A0046519A /* MainTabBarController.swift in Sources */,
 				BD71B8781E9FD7890046519A /* Post.swift in Sources */,
 				BD71B8681E99E21A0046519A /* PostEditorContentCell.swift in Sources */,
+				BD9ADED41EA7A50C00C8F8C1 /* NearPlaceListViewController.swift in Sources */,
 				BD71B87F1EA3594A0046519A /* FakeViewController.swift in Sources */,
 				BD71B87A1E9FD7F70046519A /* User.swift in Sources */,
 				BD71B8671E99E21A0046519A /* PostViewController.swift in Sources */,

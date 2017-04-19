@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 
+import Firebase
+
 class PostViewController: UIViewController {
 
   // MARK: properties
@@ -31,6 +33,12 @@ class PostViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let titleLabel = UILabel()
+    titleLabel.font = UIFont(name: "IowanOldStyle-BoldItalic", size: 20)
+    titleLabel.text = "Post"
+    titleLabel.sizeToFit()
+    self.navigationItem.titleView = titleLabel
     
     self.locationManager.delegate = self
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -95,9 +103,14 @@ class PostViewController: UIViewController {
       let content = self.content,
       let coords = self.coords else { return }
     
-    PostService.create(placeName: placeName,
-                       content: content,
-                       coords: coords) { response in
+    guard let userID = FIRAuth.auth()?.currentUser?.email else { return }
+    
+    PostService.create(
+      username: userID,
+      placeName: placeName,
+      content: content,
+      coords: coords
+    ) { response in
       switch response {
       case .success:
         print("success")

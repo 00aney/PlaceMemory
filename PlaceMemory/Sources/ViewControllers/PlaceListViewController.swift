@@ -7,16 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 import Firebase
 
 class PlaceListViewController: UIViewController {
   
   // MARK: properties
-  
-  var ref: FIRDatabaseReference!
-//  var messages: [FIRDataSnapshot]! = []
-  var refHandle: FIRDatabaseHandle!
   
   var posts: [Post] = []
   
@@ -44,7 +41,7 @@ class PlaceListViewController: UIViewController {
 //    self.collectionView.register(PostCardCell.self, forCellWithReuseIdentifier: "postCardCellId")
     
     // TODO: Load Post List
-    self.configureDatabase()
+    self.loadPosts()
     
   }
   
@@ -66,65 +63,24 @@ class PlaceListViewController: UIViewController {
   
   // MARK: Firebase
   
-  func configureDatabase() {
-    ref = FIRDatabase.database().reference()
-    
+  func loadPosts() {
     guard let userID = FIRAuth.auth()?.currentUser?.email else { return }
-    print(userID)
+    // TODO: 현재위치, 포스팅 했던 위치 거리 계산
     
-    ref.child("posts").queryOrdered(byChild: "username")
-      .queryEqual(toValue: userID)
-      .observe(.value, with: { [weak self] snapshot in
-        guard let `self` = self else { return }
-        
-        if let snapshots = snapshot.value as? [String: Any] {
-          for snap in snapshots {
-            print(snap.key)
-            print(snap.value)
-            print("!")
-            if let postDict = snap.value as? [String: Any] {
-              print(postDict)
-            }
-          }
+    print(userID)
+    PostService.postsByUserID(
+      userID: userID) { response in
+        switch response {
+        case .success(let posts):
+          self.posts = posts
+          self.collectionView.reloadData()
+          
+        case .failure(let errorMessage):
+          print("\(errorMessage)")
         }
-      })
+    }
   }
   
-  
-  
-//
-//      .observeSingleEvent(of: .value, with: { snapshot in
-//        print(snapshot.value)
-//      })
-    
-    
-//    (of: .value, with: { snapshot in
-//        print(snapshot)
-//      })
-    
-//    ref.child("users").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-//      // Get user value
-//      let username = snapshot.value!["username"] as! String
-//      let user = User.init(username: username)
-//      
-//      // ...
-//    }) { (error) in
-//      print(error.localizedDescription)
-//    }
-    
-    //.child(getUid())).queryOrderedByChild("starCount"
-    
-//    ref.child("posts").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-//      // Get user value
-//      let username = snapshot.value!["username"] as! String
-//      let user = User.init(username: username)
-//      
-//      // ...
-//    }) { (error) in
-//      print(error.localizedDescription)
-//    }
-//  }
-
 }
 
 
@@ -133,13 +89,13 @@ class PlaceListViewController: UIViewController {
 extension PlaceListViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 5
+    return self.posts.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCardCellId", for: indexPath) as! PostCardCell
     
-//    cell.configure(post: self.posts[indexPath.item])
+    cell.configure(post: self.posts[indexPath.item])
 
     return cell
   }
